@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>German Quiz</title>
+</head>
+<body>
+    <h1>🇩🇪 German Language Quiz</h1>
+    <p><strong>Test your German knowledge!</strong></p>
+
+    <form id="quizForm">
+        <p>1. What is the German word for "Hello"?</p>
+        <input type="radio" name="q1" value="Hallo"> Hallo<br>
+        <input type="radio" name="q1" value="Adieu"> Adieu<br>
+        <input type="radio" name="q1" value="Ciao"> Ciao<br>
+
+        <p>2. How do you say "Thank you" in German?</p>
+        <input type="radio" name="q2" value="Danke"> Danke<br>
+        <input type="radio" name="q2" value="Merci"> Merci<br>
+        <input type="radio" name="q2" value="Gracias"> Gracias<br>
+
+        <p>3. What number is "fünf" in German?</p>
+        <input type="radio" name="q3" value="Four"> Four<br>
+        <input type="radio" name="q3" value="Five"> Five<br>
+        <input type="radio" name="q3" value="Six"> Six<br>
+
+        <br>
+        <button type="button" onclick="checkQuiz()">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function checkQuiz() {
+            var score = 0;
+            if (document.querySelector('input[name="q1"]:checked')?.value === "Hallo") score++;
+            if (document.querySelector('input[name="q2"]:checked')?.value === "Danke") score++;
+            if (document.querySelector('input[name="q3"]:checked')?.value === "Five") score++;
+
+            document.getElementById("result").innerHTML = "Your Score: " + score + "/3";
+        }
+    </script>
+
+</body>
+</html>
